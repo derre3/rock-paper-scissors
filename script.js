@@ -35,18 +35,18 @@ function playRound() {
     computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice();
     if (computerSelection === playerSelection) {
-        console.log('Tie game', computerSelection, playerSelection );
+        alert('Tie game!');
     } else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        console.log('Player Wins', computerSelection, playerSelection);
+        alert('You Win!');
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        console.log('Player Loses', computerSelection, playerSelection);
+        alert('You Lose!');
     } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        console.log('Player Wins', computerSelection, playerSelection);
+        alert('You Win!');
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        console.log('Player Loses', computerSelection, playerSelection);
+        alert('You Lose!');
     } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        console.log('Player Wins', computerSelection, playerSelection);
+        alert('You Win!');
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        console.log('Player Loses', computerSelection, playerSelection);
-    } else console.log('error');
+        alert('You Lose!');
+    } else alert('error');
 }
