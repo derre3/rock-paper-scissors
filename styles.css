@@ -1,0 +1,10 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;
+}
+
+.play-button {
+   width: 200px;
+   height: 100px;
+}
