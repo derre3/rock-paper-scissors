@@ -62,8 +62,8 @@ function playGame() {
         alert(`Current Score: \r Player: ${playerWins} Computer: ${computerWins}`);
     }
     if (playerWins > computerWins) {
-        alert(`Victory, Congratulations! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`)
+        alert(`Victory, Congratulations! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
     } else if (playerWins < computerWins) { 
-        alert(`Oh no, the computer is victorious! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`)
-    } else alert(`Tie game, no winners! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`);
+        alert(`Oh no, the computer is victorious! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
+    } else alert(`Tie game, no winners! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`);
 }
