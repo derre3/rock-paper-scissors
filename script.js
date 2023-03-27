@@ -35,17 +35,17 @@ function playRound() {
     computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice();
     if (computerSelection === playerSelection) {
-        alert('Tie game!');
+        alert(`Draw! ${playerSelection} vs ${computerSelection}`);
     } else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        alert('You Win!');
+        playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`);
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        alert('You Lose!');
+        computerWins++, alert(`You lose the round, ${computerSelection} beats ${playerSelection}`);
     } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        alert('You Win!');
+        playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`);
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        alert('You Lose!');
+        computerWins++, alert(`You lose the round, ${computerSelection} beats ${playerSelection}`);
     } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        alert('You Win!');
+        playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`);
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
         alert('You Lose!');
     } else alert('error');
