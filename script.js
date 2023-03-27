@@ -59,7 +59,7 @@ function playGame() {
     playerWins = 0;
     for (let i = 0; i < 5 && computerWins < 3 && playerWins < 3; i++) {
         playRound();
-        console.log(`Player: ${playerWins} Computer: ${computerWins}`);
+        alert(`Current Score: \r Player: ${playerWins} Computer: ${computerWins}`);
     }
     if (playerWins > computerWins) {
         alert(`Victory, Congratulations! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`)
