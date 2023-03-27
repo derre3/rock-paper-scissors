@@ -47,6 +47,23 @@ function playRound() {
     } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
         playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`);
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        alert('You Lose!');
-    } else alert('error');
+        computerWins++, alert(`You lose the round, ${computerSelection} beats ${playerSelection}`);
+    } else alert(`error`);
+}
+
+let computerWins = 0;
+let playerWins= 0;
+
+function playGame() {
+    computerWins = 0;
+    playerWins = 0;
+    for (let i = 0; i < 5 && computerWins < 3 && playerWins < 3; i++) {
+        playRound();
+        console.log(`Player: ${playerWins} Computer: ${computerWins}`);
+    }
+    if (playerWins > computerWins) {
+        alert(`Victory, Congratulations! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`)
+    } else if (playerWins < computerWins) { 
+        alert(`Oh no, the computer is victorious! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`)
+    } else alert(`Tie game, no winners! \r Final Score: Player: ${playerWins} vs Computer: ${computerWins}`);
 }
