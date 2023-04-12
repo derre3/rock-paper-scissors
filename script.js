@@ -54,16 +54,19 @@ function playRound() {
 let computerWins = 0;
 let playerWins= 0;
 
-function playGame() {
-    computerWins = 0;
-    playerWins = 0;
-    for (let i = 0; i < 5 && computerWins < 3 && playerWins < 3; i++) {
-        playRound();
-        alert(`Current Score: \r Player: ${playerWins} Computer: ${computerWins}`);
-    }
-    if (playerWins > computerWins) {
-        alert(`Victory, Congratulations! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
-    } else if (playerWins < computerWins) { 
-        alert(`Oh no, the computer is victorious! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
-    } else alert(`Tie game, no winners! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`);
-}
+
+
+
+// function playGame() {
+//     computerWins = 0;
+//     playerWins = 0;
+//     for (let i = 0; i < 5 && computerWins < 3 && playerWins < 3; i++) {
+//         playRound();
+//         alert(`Current Score: \r Player: ${playerWins} Computer: ${computerWins}`);
+//     }
+//     if (playerWins > computerWins) {
+//         alert(`Victory, Congratulations! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
+//     } else if (playerWins < computerWins) { 
+//         alert(`Oh no, the computer is victorious! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
+//     } else alert(`Tie game, no winners! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`);
+// }
