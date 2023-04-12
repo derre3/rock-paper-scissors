@@ -1,7 +1,37 @@
-// function to get computer choice
-//     generate a number from 0 to 3
-//     put in variable computerChoice
-//     0 = rock, 1 = paper, 2 = scissors
+const choices = document.querySelectorAll('.play-button');
+const start = document.querySelector('.start-button');
+let playerChoice;
+let gameActive = 0;
+let computerWins = 0;
+let playerWins = 0;
+window.onload = isGameActive();
+
+start.addEventListener('click', () => {
+    gameActive = 1;
+    start.style.display = "none";
+    isGameActive();
+})
+
+choices.forEach(choice => {
+    choice.addEventListener('click', () =>{
+        playerChoice = choice.id;
+        playRound();
+    }) 
+});
+
+
+
+function isGameActive() {
+    if (gameActive === 0) {
+        choices.forEach(choice => {
+            choice.style.display = "none"
+        });
+    } else {
+        choices.forEach(choice => {
+            choice.style.display = "block"
+        });
+    }
+}
 
 function getComputerChoice() {
    let computerChoice = Math.floor(Math.random() *3);
@@ -12,26 +42,15 @@ function getComputerChoice() {
    } else return 'scissors'
 }
 
-let choices = document.querySelectorAll('.play-button');
-let playerChoice;
 
-choices.forEach(choice => {
-    choice.addEventListener('click', () =>{
-        playerChoice = choice.id;
-        playRound();
-    }) 
-});
 
-let gameActive = 0
-if (gameActive === 0) {
-    choices.forEach(test => {
-        test.style.display = "none"
-    });
-} else {
-    choices.forEach(test => {
-        test.style.display = "block"
-    });
-}
+
+
+
+
+
+
+
 
 // function to play a single round of rock, paper and scissors
 //     needs 2 parameters: playerSelection and computerSelection
@@ -63,8 +82,7 @@ function playRound() {
 
 
 
-let computerWins = 0;
-let playerWins= 0;
+
 // function playGame() {
 //     computerWins = 0;
 //     playerWins = 0;
