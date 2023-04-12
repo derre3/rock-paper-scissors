@@ -1,5 +1,7 @@
 const choices = document.querySelectorAll('.play-button');
 const start = document.querySelector('.start-button');
+const score = document.querySelector('.score');
+const info = document.querySelector('.info');
 let playerChoice;
 let gameActive = 0;
 let computerWins;
@@ -12,6 +14,8 @@ start.addEventListener('click', () => {
     isGameActive();
     computerWins = 0;
     playerWins = 0;
+    info.textContent = '';
+    score.textContent = '';
 })
 
 choices.forEach(choice => {
@@ -36,11 +40,20 @@ function isGameActive() {
 }
 
 function checkWinCount() {
-    if (playerWins === 5 || computerWins === 5) {
+    if (playerWins >= 5 || computerWins >= 5) {
+        checkWinner();
         gameActive = 0;
+        playerWins = 0;
+        computerWins = 0;
         isGameActive();
         start.style.display = "block";
     }
+}
+
+function checkWinner() {
+    if (playerWins > computerWins) {
+        info.textContent = "Congratulations, you won!"
+    } else info.textContent = "Oh no, the computer won!"
 }
 
 function getComputerChoice() {
@@ -56,32 +69,38 @@ function playRound() {
     computerSelection = getComputerChoice();
     playerSelection = playerChoice;
     if (computerSelection === playerSelection) {
-        alert(`Draw! ${playerSelection} vs ${computerSelection}`);
+        info.textContent = `Draw! ${playerSelection} vs ${computerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,
+        checkWinCount();
     } else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`),checkWinCount();
+        playerWins++, 
+        info.textContent = `You win the round, ${playerSelection} beats ${computerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,
+        checkWinCount();
     } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        computerWins++, alert(`You lose the round, ${computerSelection} beats ${playerSelection}`),checkWinCount();
+        computerWins++, 
+        info.textContent = `You lose the round, ${computerSelection} beats ${playerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,        
+        checkWinCount();
     } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`),checkWinCount();
+        playerWins++, 
+        info.textContent = `You win the round, ${playerSelection} beats ${computerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,
+        checkWinCount();
     } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        computerWins++, alert(`You lose the round, ${computerSelection} beats ${playerSelection}`),checkWinCount();
+        computerWins++, 
+        info.textContent = `You lose the round, ${computerSelection} beats ${playerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,        
+        checkWinCount();
     } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        playerWins++, alert(`You win the round, ${playerSelection} beats ${computerSelection}`),checkWinCount();
+        playerWins++, 
+        info.textContent = `You win the round, ${playerSelection} beats ${computerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,
+        checkWinCount();
     } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        computerWins++, alert(`You lose the round, ${computerSelection} beats ${playerSelection}`),checkWinCount();
+        computerWins++, 
+        info.textContent = `You lose the round, ${computerSelection} beats ${playerSelection}`,
+        score.textContent = `You:${playerWins} vs Computer:${computerWins}`,        
+        checkWinCount();
     } else alert(`error`);
 }
-
-
-// function playGame() {
-//     computerWins = 0;
-//     playerWins = 0;
-//     for (let i = 0; i < 5 && computerWins < 3 && playerWins < 3; i++) {
-//         alert(`Current Score: \r Player: ${playerWins} Computer: ${computerWins}`);
-//     }
-//     if (playerWins > computerWins) {
-//         alert(`Victory, Congratulations! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
-//     } else if (playerWins < computerWins) { 
-//         alert(`Oh no, the computer is victorious! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`)
-//     } else alert(`Tie game, no winners! \r Final Score: \r Player: ${playerWins} vs Computer: ${computerWins}`);
-// }
