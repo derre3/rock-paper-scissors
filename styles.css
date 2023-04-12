@@ -8,6 +8,15 @@
 .play-button {
    width: 200px;
    height: 100px;
+   font-size: 20px;
+   border-radius: 5%;
+}
+
+.start-button {
+    width: 125px;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 10%;
 }
 
 .start-container {
@@ -16,6 +25,7 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
 
 .text-container {
     display: flex;
@@ -31,6 +41,11 @@
     margin-bottom: -10rem;
 }
 
-.header:nth-child(1) {
+.header.h1 {
     margin-bottom: 100px;
+}
+
+.text-container {
+    font-size: 24px;
+    font-weight: 700px;
 }
