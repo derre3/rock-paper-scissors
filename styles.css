@@ -9,3 +9,9 @@
    width: 200px;
    height: 100px;
 }
+
+.start-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}

@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 let choices = document.querySelectorAll('.play-button');
-let playerChoice
+let playerChoice;
 
 choices.forEach(choice => {
     choice.addEventListener('click', () =>{
@@ -22,6 +22,16 @@ choices.forEach(choice => {
     }) 
 });
 
+let gameActive = 0
+if (gameActive === 0) {
+    choices.forEach(test => {
+        test.style.display = "none"
+    });
+} else {
+    choices.forEach(test => {
+        test.style.display = "block"
+    });
+}
 
 // function to play a single round of rock, paper and scissors
 //     needs 2 parameters: playerSelection and computerSelection
