@@ -2,6 +2,8 @@ const choices = document.querySelectorAll('.play-button');
 const start = document.querySelector('.start-button');
 const score = document.querySelector('.score');
 const info = document.querySelector('.info');
+const h1 = document.querySelector('.header.h1');
+const h3 = document.querySelector('.header.h3');
 let playerChoice;
 let gameActive = 0;
 let computerWins;
@@ -11,6 +13,8 @@ window.onload = isGameActive();
 start.addEventListener('click', () => {
     gameActive = 1;
     start.style.display = "none";
+    h3.style.display = "none";
+    h1.textContent = "Game in Progress!"
     isGameActive();
     computerWins = 0;
     playerWins = 0;
@@ -47,6 +51,9 @@ function checkWinCount() {
         computerWins = 0;
         isGameActive();
         start.style.display = "block";
+        h1.textContent = "Game Over!"
+        h3.style.display = "block";
+        h3.textContent = "Play Again?"
     }
 }
 

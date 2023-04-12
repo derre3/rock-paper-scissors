@@ -1,7 +1,7 @@
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 15rem;
+    margin-top: 12rem;
     gap: 32px;
 }
 
@@ -22,4 +22,15 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -10rem;
+}
+
+.header:nth-child(1) {
+    margin-bottom: 100px;
 }
