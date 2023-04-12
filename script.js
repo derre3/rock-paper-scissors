@@ -12,18 +12,16 @@ function getComputerChoice() {
    } else return 'scissors'
 }
 
-// prompt on screen for the player to typer rock, paper or scissors
-// compare value if rock paper or scissors
-// if false prompt again to type correctly
-// if true return value
+let choices = document.querySelectorAll('.play-button');
+let playerChoice
 
-function getPlayerChoice() {
-    let playerChoice;
-    do {
-        playerChoice = prompt('Please type Rock, Paper or Scissors').toLowerCase();
-    } while (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissors');
-    return playerChoice;
-}
+choices.forEach(choice => {
+    choice.addEventListener('click', () =>{
+        playerChoice = choice.id;
+        playRound();
+    }) 
+});
+
 
 // function to play a single round of rock, paper and scissors
 //     needs 2 parameters: playerSelection and computerSelection
@@ -33,7 +31,7 @@ function getPlayerChoice() {
 
 function playRound() {
     computerSelection = getComputerChoice();
-    playerSelection = getPlayerChoice();
+    playerSelection = playerChoice;
     if (computerSelection === playerSelection) {
         alert(`Draw! ${playerSelection} vs ${computerSelection}`);
     } else if (computerSelection === 'rock' && playerSelection === 'paper') {
@@ -51,12 +49,12 @@ function playRound() {
     } else alert(`error`);
 }
 
+
+
+
+
 let computerWins = 0;
 let playerWins= 0;
-
-
-
-
 // function playGame() {
 //     computerWins = 0;
 //     playerWins = 0;
